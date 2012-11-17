@@ -23,6 +23,15 @@ namespace PexBinaryHeap
             BubbleUp(items.Count - 1);
         }
 
+        public TValue GetValue()
+        {
+            if (items.Count == 0)
+            {
+                throw new InvalidOperationException("Cannot extract element from empty heap.");
+            }
+            return items[0].Item2;
+        }
+
         public override string ToString()
         {
             return String.Join(", ", items.Select(it => it.Item1));
