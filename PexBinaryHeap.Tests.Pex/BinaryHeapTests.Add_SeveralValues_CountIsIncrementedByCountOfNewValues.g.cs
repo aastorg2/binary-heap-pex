@@ -22,7 +22,7 @@ namespace PexBinaryHeap.Tests.Pex
     {
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues759()
+public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues756()
 {
     BinaryHeap<int, int> binaryHeap;
     binaryHeap = BinaryHeapFactory.Create();
@@ -33,7 +33,8 @@ public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues759()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues821()
+[PexRaisedException(typeof(TermDestructionException))]
+public void Add_SeveralValues_CountIsIncrementedByCountOfNewValuesThrowsTermDestructionException3()
 {
     BinaryHeap<int, int> binaryHeap;
     binaryHeap = BinaryHeapFactory.Create();
@@ -41,120 +42,6 @@ public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues821()
     this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
         (binaryHeap, keyValuePairs);
     PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues679()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[1];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[0] = s0;
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
-    PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues634()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[2];
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
-    PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues17()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[2];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[1] = s0;
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
-    PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues291()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[3];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[1] = s0;
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
-    PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues367()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[4];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[1] = s0;
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
-    PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues80()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[6];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[1] = s0;
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
-    PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues420()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[3];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[0] = s0;
-    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(512, default(int));
-    keyValuePairs[1] = s1;
-    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(513, default(int));
-    keyValuePairs[2] = s2;
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
-    PexAssert.IsNotNull((object)binaryHeap);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-[Ignore("the test state was: path bounds exceeded")]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues258()
-{
-    BinaryHeap<int, int> binaryHeap;
-    binaryHeap = BinaryHeapFactory.Create();
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[24];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(258, default(int));
-    keyValuePairs[0] = s0;
-    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(263, default(int));
-    keyValuePairs[1] = s1;
-    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(321, default(int));
-    keyValuePairs[2] = s2;
-    KeyValuePair<int, int> s3 = new KeyValuePair<int, int>(165, default(int));
-    keyValuePairs[3] = s3;
-    KeyValuePair<int, int> s4 = new KeyValuePair<int, int>(132, default(int));
-    keyValuePairs[4] = s4;
-    this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
-        (binaryHeap, keyValuePairs);
 }
     }
 }

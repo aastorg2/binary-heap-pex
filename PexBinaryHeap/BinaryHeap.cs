@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace PexBinaryHeap
@@ -37,13 +38,39 @@ namespace PexBinaryHeap
             return String.Join(", ", items.Select(it => it.Item1));
         }
 
+        [ContractInvariantMethod]
+        private void ObjectInvariant()
+        {
+            Contract.Invariant(HeapPropertyIsSatisfied());
+        }
+
+        [Pure]
+        private bool HeapPropertyIsSatisfied()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                var leftIndex = 2 * i + 1;
+                if (leftIndex < Count && !Less(i, leftIndex))
+                {
+                    return false;
+                }
+
+                var rightIndex = 2 * i + 2;
+                if (rightIndex < Count && !Less(i, rightIndex))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private void BubbleUp(int index)
         {
             if (index <= 0)
             {
                 return;
             }
-            var parentIndex = index/2;
+            var parentIndex = (index - 1)/2;
             if (Less(index, parentIndex))
             {
                 Swap(index, parentIndex);
@@ -56,18 +83,6 @@ namespace PexBinaryHeap
             var temp = items[i];
             items[i] = items[j];
             items[j] = temp;
-        }
-
-        public void ObjectInvariant()
-        {
-            for (int i = 0; i < Count; i++)
-            {
-                var leftIndex = 2*i + 1;
-                Debug.Assert(leftIndex >= Count || Less(i, leftIndex));
-
-                var rightIndex = 2*i + 2;
-                Debug.Assert(rightIndex >= Count || Less(i, rightIndex));
-            }
         }
 
         private bool Less(int firstIndex, int secondIndex)

@@ -24,7 +24,6 @@ namespace PexBinaryHeap.Tests.Pex
             foreach (var priorityAndValue in valuesToAdd)
             {
                 heap.Add(priorityAndValue.Key, priorityAndValue.Value);
-                heap.ObjectInvariant();
             }
             PexObserve.ValueForViewing("heap values", heap.ToString());
 
