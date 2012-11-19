@@ -16,6 +16,26 @@ namespace PexBinaryHeap.Tests.Pex
             Assert.That(result, Is.EqualTo(new[] {1, 2, 3, 4, 5, 6}));
         }
 
+        [Test]
+        public void RunningMedianWorksOnSortedSequence()
+        {
+            var items = new[] { 1, 2, 3, 4, 5 };
+
+            var result = RunningMedian(items);
+
+            Assert.That(result, Is.EqualTo(new[] { 1, 1, 2, 2, 3 }));
+        }
+
+        [Test]
+        public void RunningMedianWorksOnSortedDescendingSequence()
+        {
+            var items = new[] { 5, 4, 3, 2, 1 };
+
+            var result = RunningMedian(items);
+
+            Assert.That(result, Is.EqualTo(new[] { 5, 4, 4, 3, 3 }));
+        }
+
         private IEnumerable<T> HeapSort<T>(IEnumerable<T> items)
         {
             var heap = new BinaryHeap<T, T>();
@@ -27,6 +47,37 @@ namespace PexBinaryHeap.Tests.Pex
             while (heap.Count != 0)
             {
                 yield return heap.Extract();
+            }
+        }
+
+        private IEnumerable<int> RunningMedian(IEnumerable<int> items)
+        {
+            var lowerHalf = new BinaryHeap<int, int>((x, y) => 
+                -Comparer<int>.Default.Compare(x, y)); // first element is max
+            var higherHalf = new BinaryHeap<int, int>();  // first element is min
+            foreach (var n in items)
+            {
+                if (lowerHalf.Count == 0 || n <= lowerHalf.GetValue())
+                {
+                    lowerHalf.Add(n, n);
+                }
+                else
+                {
+                    higherHalf.Add(n, n);
+                }
+
+                while (lowerHalf.Count > higherHalf.Count + 1 &&
+                    lowerHalf.Count > 1)
+                {
+                    var maxLowerHalfValue = lowerHalf.Extract();
+                    higherHalf.Add(maxLowerHalfValue, maxLowerHalfValue);
+                }
+                while (higherHalf.Count > lowerHalf.Count)
+                {
+                    var minHigherHalfValue = higherHalf.Extract();
+                    lowerHalf.Add(minHigherHalfValue, minHigherHalfValue);
+                }
+                yield return lowerHalf.GetValue();
             }
         } 
     }

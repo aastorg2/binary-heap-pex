@@ -10,7 +10,7 @@ namespace PexBinaryHeap
         private readonly List<Tuple<TPriority, TValue>> items = 
             new List<Tuple<TPriority, TValue>>();
 
-        private readonly Comparer<TPriority> comparer = Comparer<TPriority>.Default; 
+        private readonly Comparison<TPriority> compare; 
 
         public int Count
         {
@@ -20,6 +20,16 @@ namespace PexBinaryHeap
         public BinaryHeap()
         {
             Contract.Ensures(Count == 0);
+
+            compare = Comparer<TPriority>.Default.Compare;
+        }
+
+        public BinaryHeap(Comparison<TPriority> priorityComparison)
+        {
+            Contract.Requires(priorityComparison != null);
+            Contract.Ensures(Count == 0);
+
+            compare = priorityComparison;
         }
 
         public void Add(TPriority priority, TValue value)
@@ -69,7 +79,7 @@ namespace PexBinaryHeap
             Contract.Invariant(HeapPropertyIsSatisfied());
             Contract.Invariant(items != null);
             Contract.Invariant(Contract.ForAll(items, item => item != null));
-            Contract.Invariant(comparer != null);
+            Contract.Invariant(compare != null);
             Contract.Invariant(Count >= 0);
         }
 
@@ -167,7 +177,7 @@ namespace PexBinaryHeap
             Contract.Requires(0 <= leftIndex && leftIndex <= Count);
             Contract.Requires(0 <= rightIndex && rightIndex <= Count);
 
-            return comparer.Compare(
+            return compare(
                 items[leftIndex].Item1,
                 items[rightIndex].Item1) <= 0;
         }
