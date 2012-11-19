@@ -102,7 +102,6 @@ namespace PexBinaryHeap.Tests.Pex
             Assert.AreEqual(count - 1, heap.Count);
         }
 
-
         [Test]
         public void Extract_WhenHeapIsEmtpy_ExceptionIsThrown()
         {
