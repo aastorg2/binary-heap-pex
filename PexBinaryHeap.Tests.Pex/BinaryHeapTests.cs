@@ -1,7 +1,6 @@
 // <copyright file="BinaryHeapTPriorityTValueTests.cs" company="Eleks">Copyright © Eleks 2012</copyright>
 
 using System;
-using System.Collections.Generic;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using NUnit.Framework;
@@ -18,12 +17,13 @@ namespace PexBinaryHeap.Tests.Pex
         [PexMethod]
         public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues<TPriority, TValue>(
             [PexAssumeUnderTest] BinaryHeap<TPriority, TValue> heap,
-            [PexAssumeNotNull] KeyValuePair<TPriority, TValue>[] valuesToAdd)
+            [PexAssumeNotNull] Tuple<TPriority, TValue>[] valuesToAdd)
         {
+            PexAssume.AreElementsNotNull(valuesToAdd);
             var countBeforeAdding = heap.Count;
             foreach (var priorityAndValue in valuesToAdd)
             {
-                heap.Add(priorityAndValue.Key, priorityAndValue.Value);
+                heap.Add(priorityAndValue.Item1, priorityAndValue.Item2);
             }
             PexObserve.ValueForViewing("heap values", heap.ToString());
 
@@ -45,6 +45,7 @@ namespace PexBinaryHeap.Tests.Pex
             var valueWithLeastPriority = heap.GetValue();
 
             Assert.AreEqual(minValue, valueWithLeastPriority);
+            PexObserve.ValueForViewing("heap values", heap.ToString());
             PexObserve.ValueForViewing("value with min priority", valueWithLeastPriority);
         }
     }

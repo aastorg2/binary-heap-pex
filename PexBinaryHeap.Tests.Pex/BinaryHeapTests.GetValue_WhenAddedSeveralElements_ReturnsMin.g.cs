@@ -18,14 +18,22 @@ namespace PexBinaryHeap.Tests.Pex
     {
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenAddedSeveralElements_ReturnsMin554()
+public void GetValue_WhenAddedSeveralElements_ReturnsMin665()
 {
     int[] ints = new int[1];
     this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenAddedSeveralElements_ReturnsMin370()
+public void GetValue_WhenAddedSeveralElements_ReturnsMin575()
+{
+    int[] ints = new int[1];
+    ints[0] = 1;
+    this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void GetValue_WhenAddedSeveralElements_ReturnsMin526()
 {
     int[] ints = new int[2];
     ints[0] = 1023;
@@ -34,7 +42,7 @@ public void GetValue_WhenAddedSeveralElements_ReturnsMin370()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenAddedSeveralElements_ReturnsMin816()
+public void GetValue_WhenAddedSeveralElements_ReturnsMin11()
 {
     int[] ints = new int[2];
     ints[0] = 1;
@@ -43,58 +51,29 @@ public void GetValue_WhenAddedSeveralElements_ReturnsMin816()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenAddedSeveralElements_ReturnsMin636()
+public void GetValue_WhenAddedSeveralElements_ReturnsMin102()
 {
     int[] ints = new int[3];
-    ints[0] = 1023;
-    ints[1] = 1023;
+    ints[0] = 1;
     this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenAddedSeveralElements_ReturnsMin441()
-{
-    int[] ints = new int[3];
-    ints[1] = 513;
-    ints[2] = 4;
-    this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-[PexRaisedContractException]
-public void GetValue_WhenAddedSeveralElements_ReturnsMinThrowsContractException672()
-{
-    int[] ints = new int[3];
-    ints[0] = 3;
-    ints[1] = 2;
-    this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenAddedSeveralElements_ReturnsMin707()
+public void GetValue_WhenAddedSeveralElements_ReturnsMin316()
 {
     int[] ints = new int[5];
     ints[0] = 1023;
-    ints[1] = 1023;
-    ints[2] = 1023;
-    ints[3] = 1023;
+    ints[1] = 1022;
+    ints[2] = 1022;
     this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-[PexRaisedContractException]
-public void GetValue_WhenAddedSeveralElements_ReturnsMinThrowsContractException669()
+public void GetValue_WhenAddedSeveralElements_ReturnsMin361()
 {
-    int[] ints = new int[9];
-    ints[0] = -804124671;
-    ints[1] = 1073881600;
-    ints[2] = 1081472;
-    ints[3] = 1879180320;
-    ints[4] = -671078400;
-    ints[5] = -804124671;
-    ints[6] = 1872790529;
-    ints[7] = 1740906562;
-    ints[8] = -805306367;
+    int[] ints = new int[3];
+    ints[1] = 512;
+    ints[2] = 1;
     this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
 }
     }
