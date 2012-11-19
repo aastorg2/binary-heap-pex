@@ -17,3 +17,4 @@ using Microsoft.Pex.Framework.Validation;
 [assembly: PexAllowedContractRequiresFailureAtTypeUnderTestSurface]
 [assembly: PexAllowedXmlDocumentedException]
 
+[assembly: PexInstrumentAssembly("FluentAssertions")]

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
@@ -36,6 +37,7 @@ namespace PexBinaryHeap
             {
                 throw new InvalidOperationException("Cannot extract element from empty heap.");
             }
+
             return items[0].Item2;
         }
 
@@ -45,7 +47,16 @@ namespace PexBinaryHeap
             {
                 throw new InvalidOperationException("Cannot extract element from empty heap.");
             }
-            return default(TValue);
+
+            var result = items[0].Item2;
+            Swap(0, Count - 1);
+            items.RemoveAt(Count - 1);
+            if (Count > 0)
+            {
+                BubbleDown(0);
+            }
+
+            return result;
         }
 
         public override string ToString()
@@ -96,6 +107,49 @@ namespace PexBinaryHeap
             {
                 Swap(index, parentIndex);
                 BubbleUp(parentIndex);
+            }
+        }
+
+        private void BubbleDown(int index)
+        {
+            Contract.Requires(0 <= index && index < Count);
+
+            if (index == Count - 1)
+            {
+                return;
+            }
+
+            var leftChildIndex = index * 2 + 1;
+            var rightChildIndex = index * 2 + 2;
+            
+            if (leftChildIndex < Count && 
+                rightChildIndex < Count)  // both children are present
+            {
+                // pick lesser child and swap it with parent
+                if (Less(leftChildIndex, rightChildIndex))
+                {
+                    if (Less(leftChildIndex, index))
+                    {
+                        Swap(leftChildIndex, index);
+                        BubbleDown(leftChildIndex);
+                    }
+                }
+                else
+                {
+                    if (Less(rightChildIndex, index))
+                    {
+                        Swap(rightChildIndex, index);
+                        BubbleDown(rightChildIndex);
+                    }
+                }
+            }
+            else if (leftChildIndex < Count)    // only left child is present
+            {
+                if (Less(leftChildIndex, index))
+                {
+                    Swap(leftChildIndex, index);
+                    BubbleDown(leftChildIndex);
+                }
             }
         }
 

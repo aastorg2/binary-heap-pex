@@ -50,6 +50,22 @@ namespace PexBinaryHeap.Tests.Pex
             PexObserve.ValueForViewing("value with min priority", valueWithLeastPriority);
         }
 
+        [PexMethod]
+        public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(int[] values)
+        {
+            PexAssume.IsNotNullOrEmpty(values);
+            var minValue = values.Min();
+            var heap = new BinaryHeap<int, int>();
+            foreach (var value in values)
+            {
+                heap.Add(value, value);
+            }
+
+            var extractedValue = heap.Extract();
+
+            Assert.AreEqual(minValue, extractedValue);
+        }
+
         [Test]
         public void Extract_WhenHeapIsEmtpy_ExceptionIsThrown()
         {
