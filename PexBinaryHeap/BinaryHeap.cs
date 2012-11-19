@@ -7,8 +7,8 @@ namespace PexBinaryHeap
 {
     public class BinaryHeap<TPriority, TValue>
     {
-        private readonly List<Tuple<TPriority, TValue>> items = 
-            new List<Tuple<TPriority, TValue>>();
+        private readonly List<KeyValuePair<TPriority, TValue>> items = 
+            new List<KeyValuePair<TPriority, TValue>>();
 
         private readonly Comparison<TPriority> compare; 
 
@@ -17,11 +17,9 @@ namespace PexBinaryHeap
             get { return items.Count; }
         }
 
-        public BinaryHeap()
+        public BinaryHeap() : this(Comparer<TPriority>.Default.Compare)
         {
             Contract.Ensures(Count == 0);
-
-            compare = Comparer<TPriority>.Default.Compare;
         }
 
         public BinaryHeap(Comparison<TPriority> priorityComparison)
@@ -36,7 +34,7 @@ namespace PexBinaryHeap
         {
             Contract.Ensures(Count == Contract.OldValue(Count) + 1);
 
-            items.Add(Tuple.Create(priority, value));
+            items.Add(new KeyValuePair<TPriority, TValue>(priority, value));
             BubbleUp(items.Count - 1);
         }
 
@@ -47,7 +45,7 @@ namespace PexBinaryHeap
                 throw new InvalidOperationException("Cannot extract element from empty heap.");
             }
 
-            return items[0].Item2;
+            return items[0].Value;
         }
 
         public TValue Extract()
@@ -57,7 +55,7 @@ namespace PexBinaryHeap
                 throw new InvalidOperationException("Cannot extract element from empty heap.");
             }
 
-            var result = items[0].Item2;
+            var result = items[0].Value;
             Swap(0, Count - 1);
             items.RemoveAt(Count - 1);
             if (Count > 0)
@@ -70,7 +68,7 @@ namespace PexBinaryHeap
 
         public override string ToString()
         {
-            return String.Join(", ", items.Select(it => it.Item1));
+            return String.Join(", ", items.Select(it => it.Key));
         }
 
         [ContractInvariantMethod]
@@ -78,7 +76,6 @@ namespace PexBinaryHeap
         {
             Contract.Invariant(HeapPropertyIsSatisfied());
             Contract.Invariant(items != null);
-            Contract.Invariant(Contract.ForAll(items, item => item != null));
             Contract.Invariant(compare != null);
             Contract.Invariant(Count >= 0);
         }
@@ -178,8 +175,8 @@ namespace PexBinaryHeap
             Contract.Requires(0 <= rightIndex && rightIndex <= Count);
 
             return compare(
-                items[leftIndex].Item1,
-                items[rightIndex].Item1) <= 0;
+                items[leftIndex].Key,
+                items[rightIndex].Key) <= 0;
         }
     }
 }
