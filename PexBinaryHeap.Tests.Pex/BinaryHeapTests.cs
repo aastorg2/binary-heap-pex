@@ -51,6 +51,24 @@ namespace PexBinaryHeap.Tests.Pex
         }
 
         [PexMethod]
+        public void GetValue_WhenCalled_CountStaysTheSame<TPriority, TValue>(
+            Tuple<TPriority, TValue>[] values)
+        {
+            PexAssume.IsNotNullOrEmpty(values);
+            PexAssume.AreElementsNotNull(values);
+            var heap = new BinaryHeap<TPriority, TValue>();
+            foreach (var value in values)
+            {
+                heap.Add(value.Item1, value.Item2);
+            }
+            var count = heap.Count;
+
+            heap.GetValue();
+
+            Assert.AreEqual(count, heap.Count);
+        }
+
+        [PexMethod]
         public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(int[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
@@ -65,6 +83,25 @@ namespace PexBinaryHeap.Tests.Pex
 
             Assert.AreEqual(minValue, extractedValue);
         }
+
+        [PexMethod]
+        public void Extract_WhenCalled_CountIsDecremented<TPriority, TValue>(
+            Tuple<TPriority, TValue>[] values)
+        {
+            PexAssume.IsNotNullOrEmpty(values);
+            PexAssume.AreElementsNotNull(values);
+            var heap = new BinaryHeap<TPriority, TValue>();
+            foreach (var value in values)
+            {
+                heap.Add(value.Item1, value.Item2);
+            }
+            var count = heap.Count;
+
+            heap.Extract();
+
+            Assert.AreEqual(count - 1, heap.Count);
+        }
+
 
         [Test]
         public void Extract_WhenHeapIsEmtpy_ExceptionIsThrown()

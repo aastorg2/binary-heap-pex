@@ -11,11 +11,139 @@
 using System;
 using NUnit.Framework;
 using Microsoft.Pex.Framework.Generated;
-using Microsoft.Pex.Engine.Exceptions;
 
 namespace PexBinaryHeap.Tests.Pex
 {
     public partial class BinaryHeapTests
     {
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue554()
+{
+    int[] ints = new int[1];
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue370()
+{
+    int[] ints = new int[2];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue816()
+{
+    int[] ints = new int[2];
+    ints[0] = 1;
+    ints[1] = 512;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue636()
+{
+    int[] ints = new int[3];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue608()
+{
+    int[] ints = new int[3];
+    ints[0] = 1;
+    ints[1] = 512;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue606()
+{
+    int[] ints = new int[3];
+    ints[1] = 512;
+    ints[2] = 1;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue914()
+{
+    int[] ints = new int[4];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue780()
+{
+    int[] ints = new int[5];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    ints[2] = 2;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue761()
+{
+    int[] ints = new int[6];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    ints[2] = 2;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue625()
+{
+    int[] ints = new int[7];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    ints[2] = 2;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue255()
+{
+    int[] ints = new int[8];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    ints[2] = 2;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue242()
+{
+    int[] ints = new int[7];
+    ints[0] = 1023;
+    ints[1] = 1023;
+    ints[2] = 1023;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue670()
+{
+    int[] ints = new int[11];
+    ints[0] = 693;
+    ints[1] = 693;
+    ints[2] = 641;
+    ints[3] = 305;
+    ints[4] = 321;
+    ints[5] = 306;
+    ints[6] = 309;
+    ints[7] = 514;
+    ints[8] = 436;
+    ints[9] = 768;
+    ints[10] = 768;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
     }
 }
