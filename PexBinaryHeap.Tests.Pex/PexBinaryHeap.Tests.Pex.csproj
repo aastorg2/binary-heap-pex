@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\packages\FluentAssertions.2.0.0.1\lib\net40\FluentAssertions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ExtendedReflection, Version=0.94.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Pex.Framework, Version=0.94.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="nunit.framework">
@@ -63,6 +66,9 @@
     </Compile>
     <Compile Include="BinaryHeapTests.cs" />
     <Compile Include="BinaryHeapTests.Extract_WhenAddedSeveralElements_ReturnsMin.g.cs">
+      <DependentUpon>BinaryHeapTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryHeapTests.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryHeapTests.GetValue_WhenAddedSeveralElements_ReturnsMin.g.cs">

@@ -5,6 +5,7 @@ using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using NUnit.Framework;
 using System.Linq;
+using FluentAssertions;
 
 namespace PexBinaryHeap.Tests.Pex
 {
@@ -47,6 +48,26 @@ namespace PexBinaryHeap.Tests.Pex
             Assert.AreEqual(minValue, valueWithLeastPriority);
             PexObserve.ValueForViewing("heap values", heap.ToString());
             PexObserve.ValueForViewing("value with min priority", valueWithLeastPriority);
+        }
+
+        [Test]
+        public void Extract_WhenHeapIsEmtpy_ExceptionIsThrown()
+        {
+            var heap = new BinaryHeap<int, int>();
+
+            Action extractAction = () => heap.Extract();
+
+            extractAction.ShouldThrow<InvalidOperationException>();
+        }
+
+        [Test]
+        public void GetValue_WhenHeapIsEmtpy_ExceptionIsThrown()
+        {
+            var heap = new BinaryHeap<int, int>();
+
+            Action getValueAction = () => heap.GetValue();
+
+            getValueAction.ShouldThrow<InvalidOperationException>();
         }
     }
 }

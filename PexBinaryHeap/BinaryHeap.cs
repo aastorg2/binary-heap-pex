@@ -39,6 +39,15 @@ namespace PexBinaryHeap
             return items[0].Item2;
         }
 
+        public TValue Extract()
+        {
+            if (items.Count == 0)
+            {
+                throw new InvalidOperationException("Cannot extract element from empty heap.");
+            }
+            return default(TValue);
+        }
+
         public override string ToString()
         {
             return String.Join(", ", items.Select(it => it.Item1));
