@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using Microsoft.Pex.Framework;
 using NUnit.Framework;
+using System.Linq;
 
 namespace PexBinaryHeap.Tests.Pex
 {
     [TestFixture]
-    public class BinaryHeapUsageExamples
+    [PexClass(typeof(BinaryHeap<,>))]
+    public partial class BinaryHeapUsageExamples
     {
         [Test]
         public void HeapSortWorks()
@@ -14,6 +17,17 @@ namespace PexBinaryHeap.Tests.Pex
             var result = HeapSort(items);
 
             Assert.That(result, Is.EqualTo(new[] {1, 2, 3, 4, 5, 6}));
+        }
+        
+        [PexMethod]
+        public void HeapSortWorks(int[] values)
+        {
+            PexAssume.IsNotNull(values);
+
+            var result = HeapSort(values).ToArray();
+
+            PexObserve.ValueForViewing("sorted", result);
+            Assert.That(result, Is.Ordered);
         }
 
         [Test]
