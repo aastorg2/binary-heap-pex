@@ -58,47 +58,5 @@ public void GetFirst_WhenAddedSeveralElements_ReturnsMin316()
     ints[2] = 1022;
     this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
 }
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-[Ignore("the test state was: path bounds exceeded")]
-public void GetFirst_WhenAddedSeveralElements_ReturnsMin850()
-{
-    int[] ints = new int[16];
-    ints[0] = 1023;
-    ints[1] = 1023;
-    ints[2] = 1023;
-    ints[3] = 1022;
-    ints[4] = 1021;
-    ints[5] = 1021;
-    ints[8] = 48;
-    ints[9] = 48;
-    ints[10] = 128;
-    ints[12] = 288;
-    this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-[Ignore("the test state was: path bounds exceeded")]
-public void GetFirst_WhenAddedSeveralElements_ReturnsMin493()
-{
-    int[] ints = new int[16];
-    ints[0] = 1023;
-    ints[1] = 1023;
-    ints[2] = 1023;
-    ints[3] = 6;
-    ints[4] = 5;
-    ints[5] = 5;
-    ints[6] = -2147483644;
-    ints[7] = -2147483644;
-    ints[8] = -2147483520;
-    ints[9] = -2147483644;
-    ints[10] = -2147483644;
-    ints[11] = -2147483520;
-    ints[12] = -2147483644;
-    ints[13] = -2147483644;
-    ints[14] = -2147483644;
-    ints[15] = int.MinValue;
-    this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
-}
     }
 }

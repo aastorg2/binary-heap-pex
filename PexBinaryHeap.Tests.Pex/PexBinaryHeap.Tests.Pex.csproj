@@ -61,7 +61,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BinaryHeapTests.Add_MinValue_NewlyAddedValueCanBeRetrieved.g.cs">
+      <DependentUpon>BinaryHeapTests.cs</DependentUpon>
+    </Compile>
     <Compile Include="BinaryHeapTests.Add_SeveralValues_CountIsIncrementedByCountOfNewValues.g.cs">
+      <DependentUpon>BinaryHeapTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryHeapTests.Add_WhenNewMinValueIsAdded_ItWillBeRetrievedLater.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryHeapTests.cs" />

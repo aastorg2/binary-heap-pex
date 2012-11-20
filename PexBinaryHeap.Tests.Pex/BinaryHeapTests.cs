@@ -1,6 +1,7 @@
 // <copyright file="BinaryHeapTPriorityTValueTests.cs" company="Eleks">Copyright © Eleks 2012</copyright>
 
 using System;
+using System.Collections.Generic;
 using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using NUnit.Framework;
@@ -17,18 +18,34 @@ namespace PexBinaryHeap.Tests.Pex
     {
         [PexMethod]
         public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues<TPriority, TValue>(
-            [PexAssumeUnderTest] BinaryHeap<TPriority, TValue> heap,
-            [PexAssumeNotNull] Tuple<TPriority, TValue>[] valuesToAdd)
+            [PexAssumeNotNull] KeyValuePair<TPriority, TValue>[] valuesToAdd)
         {
-            PexAssume.AreElementsNotNull(valuesToAdd);
+            var heap = new BinaryHeap<TPriority, TValue>();
             var countBeforeAdding = heap.Count;
             foreach (var priorityAndValue in valuesToAdd)
             {
-                heap.Add(priorityAndValue.Item1, priorityAndValue.Item2);
+                heap.Add(priorityAndValue.Key, priorityAndValue.Value); // todo: check that count is incremented only by one
             }
             PexObserve.ValueForViewing("heap values", heap.ToString());
 
             Assert.AreEqual(countBeforeAdding + valuesToAdd.Length, heap.Count);
+        }
+
+        [PexMethod]
+        public void Add_WhenNewMinValueIsAdded_ItWillBeRetrievedLater<TValue>(
+            KeyValuePair<int, TValue>[] values)
+        {
+            PexAssume.IsNotNull(values);
+            var heap = new BinaryHeap<int, TValue>(values);
+
+            var newValue = PexChoose.Value<KeyValuePair<int, TValue>>("newValue");
+            PexAssume.TrueForAll(values, value => newValue.Key < value.Key);
+            PexObserve.ValueForViewing("newValue", newValue);
+
+            heap.Add(newValue.Key, newValue.Value);
+
+            var minValue = heap.GetFirst();
+            Assert.That(minValue, Is.EqualTo(newValue.Value));
         }
 
         [PexMethod]
@@ -37,11 +54,7 @@ namespace PexBinaryHeap.Tests.Pex
         {
             PexAssume.IsNotNullOrEmpty(values);
             var minValue = values.Min();
-            var heap = new BinaryHeap<int, int>();
-            foreach (var value in values)
-            {
-                heap.Add(value, value);
-            }
+            var heap = new BinaryHeap<int, int>(values.Select(it => new KeyValuePair<int, int>(it, it)));
 
             var valueWithLeastPriority = heap.GetFirst();
 
@@ -52,15 +65,10 @@ namespace PexBinaryHeap.Tests.Pex
 
         [PexMethod]
         public void GetFirst_WhenCalled_CountStaysTheSame<TPriority, TValue>(
-            Tuple<TPriority, TValue>[] values)
+            KeyValuePair<TPriority, TValue>[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
-            PexAssume.AreElementsNotNull(values);
-            var heap = new BinaryHeap<TPriority, TValue>();
-            foreach (var value in values)
-            {
-                heap.Add(value.Item1, value.Item2);
-            }
+            var heap = new BinaryHeap<TPriority, TValue>(values);
             var count = heap.Count;
 
             heap.GetFirst();
@@ -73,11 +81,7 @@ namespace PexBinaryHeap.Tests.Pex
         {
             PexAssume.IsNotNullOrEmpty(values);
             var minValue = values.Min();
-            var heap = new BinaryHeap<int, int>();
-            foreach (var value in values)
-            {
-                heap.Add(value, value);
-            }
+            var heap = new BinaryHeap<int, int>(values.Select(it => new KeyValuePair<int, int>(it, it)));
 
             var extractedValue = heap.ExtractFirst();
 
@@ -86,18 +90,13 @@ namespace PexBinaryHeap.Tests.Pex
 
         [PexMethod]
         public void ExtractFirst_WhenCalled_CountIsDecremented<TPriority, TValue>(
-            Tuple<TPriority, TValue>[] values)
+            KeyValuePair<TPriority, TValue>[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
-            PexAssume.AreElementsNotNull(values);
-            var heap = new BinaryHeap<TPriority, TValue>();
-            foreach (var value in values)
-            {
-                heap.Add(value.Item1, value.Item2);
-            }
+            var heap = new BinaryHeap<TPriority, TValue>(values);
             var count = heap.Count;
 
-            heap.ExtractFirst();
+            heap.ExtractFirst(); // todo: call this multiple times
 
             Assert.AreEqual(count - 1, heap.Count);
         }

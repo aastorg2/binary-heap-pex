@@ -11,6 +11,7 @@
 using System;
 using NUnit.Framework;
 using Microsoft.Pex.Framework.Generated;
+using System.Collections.Generic;
 
 namespace PexBinaryHeap.Tests.Pex
 {
@@ -18,205 +19,106 @@ namespace PexBinaryHeap.Tests.Pex
     {
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented28()
+public void ExtractFirst_WhenCalled_CountIsDecremented731()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[1];
-    Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
-    tuples[0] = s0;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[1];
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
 public void ExtractFirst_WhenCalled_CountIsDecremented709()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[2];
-    Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
-    tuples[1] = s1;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[2];
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented726()
+public void ExtractFirst_WhenCalled_CountIsDecremented419()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[3];
-    Tuple<int, int> s0 = new Tuple<int, int>(257, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(2, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(1, 0);
-    tuples[2] = s2;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[3];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
+    keyValuePairs[1] = s0;
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented649()
+public void ExtractFirst_WhenCalled_CountIsDecremented672()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[3];
-    Tuple<int, int> s0 = new Tuple<int, int>(802, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(802, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(802, 0);
-    tuples[2] = s2;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[4];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
+    keyValuePairs[1] = s0;
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented83()
+public void ExtractFirst_WhenCalled_CountIsDecremented991()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[4];
-    Tuple<int, int> s0 = new Tuple<int, int>(17, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(17, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(0, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(0, 0);
-    tuples[3] = s3;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[4];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(256, default(int));
+    keyValuePairs[0] = s0;
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(578, default(int));
+    keyValuePairs[1] = s1;
+    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(80, default(int));
+    keyValuePairs[2] = s2;
+    KeyValuePair<int, int> s3 = new KeyValuePair<int, int>(65, default(int));
+    keyValuePairs[3] = s3;
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented92()
+public void ExtractFirst_WhenCalled_CountIsDecremented756()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[4];
-    Tuple<int, int> s0 = new Tuple<int, int>(541, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(540, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(540, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(64, 0);
-    tuples[3] = s3;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[5];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
+    keyValuePairs[1] = s0;
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented282()
+public void ExtractFirst_WhenCalled_CountIsDecremented904()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[5];
-    Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(0, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(0, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(0, 0);
-    tuples[4] = s4;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[7];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
+    keyValuePairs[1] = s0;
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented908()
+public void ExtractFirst_WhenCalled_CountIsDecremented724()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[5];
-    Tuple<int, int> s0 = new Tuple<int, int>(825, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(818, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(817, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(1, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(0, 0);
-    tuples[4] = s4;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[8];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
+    keyValuePairs[1] = s0;
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented747()
+public void ExtractFirst_WhenCalled_CountIsDecremented434()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[5];
-    Tuple<int, int> s0 = new Tuple<int, int>(856, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(856, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(856, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(276, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(2, 0);
-    tuples[4] = s4;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented577()
-{
-    Tuple<int, int>[] tuples = new Tuple<int, int>[8];
-    Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(0, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(0, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(0, 0);
-    tuples[4] = s4;
-    Tuple<int, int> s5 = new Tuple<int, int>(0, 0);
-    tuples[5] = s5;
-    Tuple<int, int> s6 = new Tuple<int, int>(0, 0);
-    tuples[6] = s6;
-    Tuple<int, int> s7 = new Tuple<int, int>(0, 0);
-    tuples[7] = s7;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented609()
-{
-    Tuple<int, int>[] tuples = new Tuple<int, int>[6];
-    Tuple<int, int> s0 = new Tuple<int, int>(560, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(192, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(65, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(8, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(1, 0);
-    tuples[4] = s4;
-    Tuple<int, int> s5 = new Tuple<int, int>(577, 0);
-    tuples[5] = s5;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented389()
-{
-    Tuple<int, int>[] tuples = new Tuple<int, int>[13];
-    Tuple<int, int> s0 = new Tuple<int, int>(10485761, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(11608072, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(8388608, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(2105344, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(458752, 0);
-    tuples[4] = s4;
-    Tuple<int, int> s5 = new Tuple<int, int>(-1610612735, 0);
-    tuples[5] = s5;
-    Tuple<int, int> s6 = new Tuple<int, int>(-2145386167, 0);
-    tuples[6] = s6;
-    Tuple<int, int> s7 = new Tuple<int, int>(-2146369536, 0);
-    tuples[7] = s7;
-    Tuple<int, int> s8 = new Tuple<int, int>(-2146435072, 0);
-    tuples[8] = s8;
-    Tuple<int, int> s9 = new Tuple<int, int>(-2147479552, 0);
-    tuples[9] = s9;
-    Tuple<int, int> s10 = new Tuple<int, int>(-2147479552, 0);
-    tuples[10] = s10;
-    Tuple<int, int> s11 = new Tuple<int, int>(-1879048192, 0);
-    tuples[11] = s11;
-    Tuple<int, int> s12 = new Tuple<int, int>(0, 0);
-    tuples[12] = s12;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[11];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(577, default(int));
+    keyValuePairs[0] = s0;
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(704, default(int));
+    keyValuePairs[1] = s1;
+    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(514, default(int));
+    keyValuePairs[2] = s2;
+    KeyValuePair<int, int> s3 = new KeyValuePair<int, int>(228, default(int));
+    keyValuePairs[3] = s3;
+    KeyValuePair<int, int> s4 = new KeyValuePair<int, int>(209, default(int));
+    keyValuePairs[4] = s4;
+    KeyValuePair<int, int> s5 = new KeyValuePair<int, int>(142, default(int));
+    keyValuePairs[5] = s5;
+    KeyValuePair<int, int> s6 = new KeyValuePair<int, int>(45, default(int));
+    keyValuePairs[6] = s6;
+    KeyValuePair<int, int> s7 = new KeyValuePair<int, int>(28, default(int));
+    keyValuePairs[7] = s7;
+    KeyValuePair<int, int> s8 = new KeyValuePair<int, int>(1, default(int));
+    keyValuePairs[8] = s8;
+    KeyValuePair<int, int> s9 = new KeyValuePair<int, int>(1, default(int));
+    keyValuePairs[9] = s9;
+    KeyValuePair<int, int> s10 = new KeyValuePair<int, int>(44, default(int));
+    keyValuePairs[10] = s10;
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(keyValuePairs);
 }
     }
 }

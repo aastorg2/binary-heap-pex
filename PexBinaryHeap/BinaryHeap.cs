@@ -30,6 +30,17 @@ namespace PexBinaryHeap
             compare = priorityComparison;
         }
 
+        public BinaryHeap(IEnumerable<KeyValuePair<TPriority, TValue>> items) : this()
+        {
+            Contract.Requires(items != null);
+            Contract.Ensures(Count == items.Count());
+
+            foreach (var item in items)
+            {
+                Add(item.Key, item.Value);
+            }
+        }
+
         public void Add(TPriority priority, TValue value)
         {
             Contract.Ensures(Count == Contract.OldValue(Count) + 1);
