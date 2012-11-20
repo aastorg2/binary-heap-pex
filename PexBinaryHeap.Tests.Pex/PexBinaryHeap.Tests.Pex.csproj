@@ -71,6 +71,12 @@
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryHeapTests.cs" />
+    <Compile Include="BinaryHeapTests.Ctor_WhenCalledWithValues_MinValueBecomesFirst.g.cs">
+      <DependentUpon>BinaryHeapTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryHeapTests.Ctor_WhenCalledWithValues_ResultingCountIsEqualToValuesCount.g.cs">
+      <DependentUpon>BinaryHeapTests.cs</DependentUpon>
+    </Compile>
     <Compile Include="BinaryHeapTests.ExtractFirst_WhenCalled_CountIsDecremented.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>

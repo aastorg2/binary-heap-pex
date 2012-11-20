@@ -16,6 +16,32 @@ namespace PexBinaryHeap.Tests.Pex
     public partial class BinaryHeapTests
     {
         [PexMethod]
+        public void Ctor_WhenCalledWithValues_ResultingCountIsEqualToValuesCount<TPriority, TValue>(
+            KeyValuePair<TPriority, TValue>[] values)
+        {
+            PexAssume.IsNotNull(values);
+            var initialValuesCount = values.Count();
+
+            var heap = new BinaryHeap<TPriority, TValue>(values);
+
+            Assert.That(heap.Count, Is.EqualTo(initialValuesCount));
+        }
+
+        [PexMethod]
+        public void Ctor_WhenCalledWithValues_MinValueBecomesFirst(
+            KeyValuePair<int, int>[] values)
+        {
+            PexAssume.IsNotNullOrEmpty(values);
+            PexAssume.TrueForAll(values, value => value.Key == value.Value);
+            var minValue = values.Min(it => it.Value);
+
+            var heap = new BinaryHeap<int, int>(values);
+
+            var firstValue = heap.ExtractFirst();
+            Assert.That(firstValue, Is.EqualTo(minValue));
+        }
+
+        [PexMethod]
         public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues<TPriority, TValue>(
             [PexAssumeUnderTest] BinaryHeap<TPriority, TValue> heap,
             [PexAssumeNotNull] KeyValuePair<TPriority, TValue>[] valuesToAdd)
