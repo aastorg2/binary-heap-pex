@@ -16,47 +16,5 @@ namespace PexBinaryHeap.Tests.Pex
 {
     public partial class BinaryHeapTests
     {
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenAddedSeveralElements_ReturnsMin665()
-{
-    int[] ints = new int[1];
-    this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenAddedSeveralElements_ReturnsMin575()
-{
-    int[] ints = new int[1];
-    ints[0] = 1;
-    this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenAddedSeveralElements_ReturnsMin526()
-{
-    int[] ints = new int[2];
-    ints[0] = 1023;
-    ints[1] = 1023;
-    this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenAddedSeveralElements_ReturnsMin102()
-{
-    int[] ints = new int[3];
-    ints[0] = 1;
-    this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenAddedSeveralElements_ReturnsMin316()
-{
-    int[] ints = new int[5];
-    ints[0] = 1023;
-    ints[1] = 1022;
-    ints[2] = 1022;
-    this.GetFirst_WhenAddedSeveralElements_ReturnsMin(ints);
-}
     }
 }

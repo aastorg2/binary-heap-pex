@@ -67,6 +67,9 @@
     <Compile Include="BinaryHeapTests.Add_SeveralValues_CountIsIncrementedByCountOfNewValues.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
+    <Compile Include="BinaryHeapTests.Add_WhenNewMinValueIsAdded_ItBecomesFirstValue.g.cs">
+      <DependentUpon>BinaryHeapTests.cs</DependentUpon>
+    </Compile>
     <Compile Include="BinaryHeapTests.Add_WhenNewMinValueIsAdded_ItWillBeRetrievedLater.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
@@ -75,6 +78,9 @@
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryHeapTests.ExtractFirst_WhenHeapContainsSeveralElements_ResultIsMinValue.g.cs">
+      <DependentUpon>BinaryHeapTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BinaryHeapTests.GetFirst_HeapIsNotEmpty_ReturnsMinValue.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryHeapTests.GetFirst_WhenAddedSeveralElements_ReturnsMin.g.cs">

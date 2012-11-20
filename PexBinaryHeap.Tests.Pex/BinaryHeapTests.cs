@@ -18,38 +18,39 @@ namespace PexBinaryHeap.Tests.Pex
     {
         [PexMethod]
         public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues<TPriority, TValue>(
+            [PexAssumeUnderTest] BinaryHeap<TPriority, TValue> heap,
             [PexAssumeNotNull] KeyValuePair<TPriority, TValue>[] valuesToAdd)
         {
-            var heap = new BinaryHeap<TPriority, TValue>();
-            var countBeforeAdding = heap.Count;
+            var initialCount = heap.Count;
+
             foreach (var priorityAndValue in valuesToAdd)
             {
-                heap.Add(priorityAndValue.Key, priorityAndValue.Value); // todo: check that count is incremented only by one
+                var previousCount = heap.Count;
+                heap.Add(priorityAndValue.Key, priorityAndValue.Value);
+                Assert.That(heap.Count, Is.EqualTo(previousCount + 1));
             }
-            PexObserve.ValueForViewing("heap values", heap.ToString());
 
-            Assert.AreEqual(countBeforeAdding + valuesToAdd.Length, heap.Count);
+            PexObserve.ValueForViewing("heap values", heap.ToString());
+            Assert.That(heap.Count, Is.EqualTo(initialCount + valuesToAdd.Length));
         }
 
         [PexMethod]
-        public void Add_WhenNewMinValueIsAdded_ItWillBeRetrievedLater<TValue>(
-            KeyValuePair<int, TValue>[] values)
+        public void Add_WhenNewMinValueIsAdded_ItBecomesFirstValue<TValue>(
+            KeyValuePair<int, TValue>[] existingValues,
+            KeyValuePair<int, TValue> newMinValue)
         {
-            PexAssume.IsNotNull(values);
-            var heap = new BinaryHeap<int, TValue>(values);
+            PexAssume.IsNotNull(existingValues);
+            var heap = new BinaryHeap<int, TValue>(existingValues);
+            PexAssume.TrueForAll(existingValues, value => newMinValue.Key < value.Key);
 
-            var newValue = PexChoose.Value<KeyValuePair<int, TValue>>("newValue");
-            PexAssume.TrueForAll(values, value => newValue.Key < value.Key);
-            PexObserve.ValueForViewing("newValue", newValue);
-
-            heap.Add(newValue.Key, newValue.Value);
+            heap.Add(newMinValue.Key, newMinValue.Value);
 
             var minValue = heap.GetFirst();
-            Assert.That(minValue, Is.EqualTo(newValue.Value));
+            Assert.That(minValue, Is.EqualTo(newMinValue.Value));
         }
 
         [PexMethod]
-        public void GetFirst_WhenAddedSeveralElements_ReturnsMin(
+        public void GetFirst_HeapIsNotEmpty_ReturnsMinValue(
             [PexAssumeNotNull] int[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
@@ -94,11 +95,13 @@ namespace PexBinaryHeap.Tests.Pex
         {
             PexAssume.IsNotNullOrEmpty(values);
             var heap = new BinaryHeap<TPriority, TValue>(values);
-            var count = heap.Count;
 
-            heap.ExtractFirst(); // todo: call this multiple times
-
-            Assert.AreEqual(count - 1, heap.Count);
+            for (int i = 0; i < values.Length; i++)
+            {
+                var previousCount = heap.Count;
+                heap.ExtractFirst();
+                Assert.That(heap.Count, Is.EqualTo(previousCount - 1));
+            }
         }
 
         [Test]
