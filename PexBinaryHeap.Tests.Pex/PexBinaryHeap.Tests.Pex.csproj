@@ -65,16 +65,16 @@
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryHeapTests.cs" />
-    <Compile Include="BinaryHeapTests.Extract_WhenCalled_CountIsDecremented.g.cs">
+    <Compile Include="BinaryHeapTests.ExtractFirst_WhenCalled_CountIsDecremented.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
-    <Compile Include="BinaryHeapTests.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue.g.cs">
+    <Compile Include="BinaryHeapTests.ExtractFirst_WhenHeapContainsSeveralElements_ResultIsMinValue.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
-    <Compile Include="BinaryHeapTests.GetValue_WhenAddedSeveralElements_ReturnsMin.g.cs">
+    <Compile Include="BinaryHeapTests.GetFirst_WhenAddedSeveralElements_ReturnsMin.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
-    <Compile Include="BinaryHeapTests.GetValue_WhenCalled_CountStaysTheSame.g.cs">
+    <Compile Include="BinaryHeapTests.GetFirst_WhenCalled_CountStaysTheSame.g.cs">
       <DependentUpon>BinaryHeapTests.cs</DependentUpon>
     </Compile>
     <Compile Include="BinaryHeapUsageExamples.cs" />

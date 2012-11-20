@@ -46,7 +46,7 @@ namespace PexBinaryHeap.Tests.Pex
 
             while (heap.Count != 0)
             {
-                yield return heap.Extract();
+                yield return heap.ExtractFirst();
             }
         }
 
@@ -57,7 +57,7 @@ namespace PexBinaryHeap.Tests.Pex
             var higherHalf = new BinaryHeap<int, int>();  // first element is min
             foreach (var n in items)
             {
-                if (lowerHalf.Count == 0 || n <= lowerHalf.GetValue())
+                if (lowerHalf.Count == 0 || n <= lowerHalf.GetFirst())
                 {
                     lowerHalf.Add(n, n);
                 }
@@ -69,15 +69,15 @@ namespace PexBinaryHeap.Tests.Pex
                 while (lowerHalf.Count > higherHalf.Count + 1 &&
                     lowerHalf.Count > 1)
                 {
-                    var maxLowerHalfValue = lowerHalf.Extract();
+                    var maxLowerHalfValue = lowerHalf.ExtractFirst();
                     higherHalf.Add(maxLowerHalfValue, maxLowerHalfValue);
                 }
                 while (higherHalf.Count > lowerHalf.Count)
                 {
-                    var minHigherHalfValue = higherHalf.Extract();
+                    var minHigherHalfValue = higherHalf.ExtractFirst();
                     lowerHalf.Add(minHigherHalfValue, minHigherHalfValue);
                 }
-                yield return lowerHalf.GetValue();
+                yield return lowerHalf.GetFirst();
             }
         } 
     }

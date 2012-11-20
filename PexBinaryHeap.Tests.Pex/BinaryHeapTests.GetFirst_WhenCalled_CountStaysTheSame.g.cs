@@ -18,27 +18,27 @@ namespace PexBinaryHeap.Tests.Pex
     {
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenCalled_CountStaysTheSame28()
+public void GetFirst_WhenCalled_CountStaysTheSame28()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[1];
     Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
     tuples[0] = s0;
-    this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(tuples);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenCalled_CountStaysTheSame709()
+public void GetFirst_WhenCalled_CountStaysTheSame709()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[2];
     Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
     tuples[0] = s0;
     Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
     tuples[1] = s1;
-    this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(tuples);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenCalled_CountStaysTheSame726()
+public void GetFirst_WhenCalled_CountStaysTheSame726()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[3];
     Tuple<int, int> s0 = new Tuple<int, int>(257, 0);
@@ -47,11 +47,11 @@ public void GetValue_WhenCalled_CountStaysTheSame726()
     tuples[1] = s1;
     Tuple<int, int> s2 = new Tuple<int, int>(1, 0);
     tuples[2] = s2;
-    this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(tuples);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenCalled_CountStaysTheSame282()
+public void GetFirst_WhenCalled_CountStaysTheSame282()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[5];
     Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
@@ -64,12 +64,12 @@ public void GetValue_WhenCalled_CountStaysTheSame282()
     tuples[3] = s3;
     Tuple<int, int> s4 = new Tuple<int, int>(0, 0);
     tuples[4] = s4;
-    this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(tuples);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
 [Ignore("the test state was: path bounds exceeded")]
-public void GetValue_WhenCalled_CountStaysTheSame817()
+public void GetFirst_WhenCalled_CountStaysTheSame817()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[17];
     Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
@@ -106,7 +106,7 @@ public void GetValue_WhenCalled_CountStaysTheSame817()
     tuples[15] = s15;
     Tuple<int, int> s16 = new Tuple<int, int>(0, 0);
     tuples[16] = s16;
-    this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(tuples);
 }
     }
 }

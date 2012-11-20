@@ -32,7 +32,7 @@ namespace PexBinaryHeap.Tests.Pex
         }
 
         [PexMethod]
-        public void GetValue_WhenAddedSeveralElements_ReturnsMin(
+        public void GetFirst_WhenAddedSeveralElements_ReturnsMin(
             [PexAssumeNotNull] int[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
@@ -43,7 +43,7 @@ namespace PexBinaryHeap.Tests.Pex
                 heap.Add(value, value);
             }
 
-            var valueWithLeastPriority = heap.GetValue();
+            var valueWithLeastPriority = heap.GetFirst();
 
             Assert.AreEqual(minValue, valueWithLeastPriority);
             PexObserve.ValueForViewing("heap values", heap.ToString());
@@ -51,7 +51,7 @@ namespace PexBinaryHeap.Tests.Pex
         }
 
         [PexMethod]
-        public void GetValue_WhenCalled_CountStaysTheSame<TPriority, TValue>(
+        public void GetFirst_WhenCalled_CountStaysTheSame<TPriority, TValue>(
             Tuple<TPriority, TValue>[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
@@ -63,13 +63,13 @@ namespace PexBinaryHeap.Tests.Pex
             }
             var count = heap.Count;
 
-            heap.GetValue();
+            heap.GetFirst();
 
             Assert.AreEqual(count, heap.Count);
         }
 
         [PexMethod]
-        public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(int[] values)
+        public void ExtractFirst_WhenHeapContainsSeveralElements_ResultIsMinValue(int[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
             var minValue = values.Min();
@@ -79,13 +79,13 @@ namespace PexBinaryHeap.Tests.Pex
                 heap.Add(value, value);
             }
 
-            var extractedValue = heap.Extract();
+            var extractedValue = heap.ExtractFirst();
 
             Assert.AreEqual(minValue, extractedValue);
         }
 
         [PexMethod]
-        public void Extract_WhenCalled_CountIsDecremented<TPriority, TValue>(
+        public void ExtractFirst_WhenCalled_CountIsDecremented<TPriority, TValue>(
             Tuple<TPriority, TValue>[] values)
         {
             PexAssume.IsNotNullOrEmpty(values);
@@ -97,27 +97,27 @@ namespace PexBinaryHeap.Tests.Pex
             }
             var count = heap.Count;
 
-            heap.Extract();
+            heap.ExtractFirst();
 
             Assert.AreEqual(count - 1, heap.Count);
         }
 
         [Test]
-        public void Extract_WhenHeapIsEmtpy_ExceptionIsThrown()
+        public void ExtractFirst_WhenHeapIsEmtpy_ExceptionIsThrown()
         {
             var heap = new BinaryHeap<int, int>();
 
-            Action extractAction = () => heap.Extract();
+            Action extractAction = () => heap.ExtractFirst();
 
             extractAction.ShouldThrow<InvalidOperationException>();
         }
 
         [Test]
-        public void GetValue_WhenHeapIsEmtpy_ExceptionIsThrown()
+        public void GetFirst_WhenHeapIsEmtpy_ExceptionIsThrown()
         {
             var heap = new BinaryHeap<int, int>();
 
-            Action getValueAction = () => heap.GetValue();
+            Action getValueAction = () => heap.GetFirst();
 
             getValueAction.ShouldThrow<InvalidOperationException>();
         }

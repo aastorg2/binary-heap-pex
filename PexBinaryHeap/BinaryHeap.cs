@@ -38,21 +38,21 @@ namespace PexBinaryHeap
             BubbleUp(items.Count - 1);
         }
 
-        public TValue GetValue()
+        public TValue GetFirst()
         {
             if (items.Count == 0)
             {
-                throw new InvalidOperationException("Cannot extract element from empty heap.");
+                throw new InvalidOperationException("Cannot get an element from empty heap.");
             }
 
             return items[0].Value;
         }
 
-        public TValue Extract()
+        public TValue ExtractFirst()
         {
             if (items.Count == 0)
             {
-                throw new InvalidOperationException("Cannot extract element from empty heap.");
+                throw new InvalidOperationException("Cannot extract an element from empty heap.");
             }
 
             var result = items[0].Value;
