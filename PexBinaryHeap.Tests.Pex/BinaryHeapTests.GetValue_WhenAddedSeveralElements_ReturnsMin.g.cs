@@ -76,5 +76,77 @@ public void GetValue_WhenAddedSeveralElements_ReturnsMin583()
     ints[0] = 1;
     this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
 }
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+[Ignore("the test state was: path bounds exceeded")]
+public void GetValue_WhenAddedSeveralElements_ReturnsMin628()
+{
+    int[] ints = new int[17];
+    ints[0] = 1023;
+    ints[1] = 1022;
+    ints[2] = 1022;
+    ints[3] = 1022;
+    ints[4] = 921;
+    ints[5] = 894;
+    ints[6] = 831;
+    ints[7] = 830;
+    ints[8] = -2147482824;
+    ints[9] = 817;
+    ints[10] = 896;
+    ints[11] = 817;
+    ints[12] = 825;
+    ints[13] = 829;
+    ints[14] = 825;
+    ints[15] = 768;
+    this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+[Ignore("the test state was: path bounds exceeded")]
+public void GetValue_WhenAddedSeveralElements_ReturnsMin433()
+{
+    int[] ints = new int[17];
+    ints[0] = 1023;
+    ints[1] = 1022;
+    ints[2] = 1022;
+    ints[3] = 1022;
+    ints[4] = 1021;
+    ints[5] = 1016;
+    ints[6] = 1016;
+    ints[7] = 1016;
+    ints[8] = -1073741054;
+    ints[9] = 779;
+    ints[10] = 66176;
+    ints[11] = -1073740991;
+    ints[12] = -1073741017;
+    ints[13] = -1073740991;
+    ints[14] = -1073741053;
+    ints[15] = -1073740992;
+    this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+[Ignore("the test state was: path bounds exceeded")]
+public void GetValue_WhenAddedSeveralElements_ReturnsMin917()
+{
+    int[] ints = new int[17];
+    ints[0] = 511;
+    ints[1] = 510;
+    ints[2] = 510;
+    ints[3] = 510;
+    ints[4] = 504;
+    ints[5] = 504;
+    ints[6] = 508;
+    ints[7] = 504;
+    ints[8] = -2147483328;
+    ints[9] = -2147483247;
+    ints[10] = -2147417984;
+    ints[11] = -2147483255;
+    ints[12] = -2147483087;
+    ints[13] = -2147483327;
+    ints[14] = -2147483135;
+    ints[15] = -2147483264;
+    this.GetValue_WhenAddedSeveralElements_ReturnsMin(ints);
+}
     }
 }

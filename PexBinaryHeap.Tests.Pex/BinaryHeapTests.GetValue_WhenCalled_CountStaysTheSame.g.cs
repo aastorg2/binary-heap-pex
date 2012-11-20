@@ -38,17 +38,6 @@ public void GetValue_WhenCalled_CountStaysTheSame709()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenCalled_CountStaysTheSame456()
-{
-    Tuple<int, int>[] tuples = new Tuple<int, int>[2];
-    Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(1, 0);
-    tuples[1] = s1;
-    this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
 public void GetValue_WhenCalled_CountStaysTheSame726()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[3];
@@ -79,27 +68,10 @@ public void GetValue_WhenCalled_CountStaysTheSame282()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenCalled_CountStaysTheSame622()
-{
-    Tuple<int, int>[] tuples = new Tuple<int, int>[5];
-    Tuple<int, int> s0 = new Tuple<int, int>(791, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(896, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(598, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(896, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(0, 0);
-    tuples[4] = s4;
-    this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
 [Ignore("the test state was: path bounds exceeded")]
-public void GetValue_WhenCalled_CountStaysTheSame2()
+public void GetValue_WhenCalled_CountStaysTheSame817()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[22];
+    Tuple<int, int>[] tuples = new Tuple<int, int>[17];
     Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
     tuples[0] = s0;
     Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
@@ -134,16 +106,6 @@ public void GetValue_WhenCalled_CountStaysTheSame2()
     tuples[15] = s15;
     Tuple<int, int> s16 = new Tuple<int, int>(0, 0);
     tuples[16] = s16;
-    Tuple<int, int> s17 = new Tuple<int, int>(0, 0);
-    tuples[17] = s17;
-    Tuple<int, int> s18 = new Tuple<int, int>(0, 0);
-    tuples[18] = s18;
-    Tuple<int, int> s19 = new Tuple<int, int>(0, 0);
-    tuples[19] = s19;
-    Tuple<int, int> s20 = new Tuple<int, int>(0, 0);
-    tuples[20] = s20;
-    Tuple<int, int> s21 = new Tuple<int, int>(0, 0);
-    tuples[21] = s21;
     this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
 }
     }

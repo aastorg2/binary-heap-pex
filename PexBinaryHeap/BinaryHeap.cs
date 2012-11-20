@@ -104,16 +104,19 @@ namespace PexBinaryHeap
         {
             Contract.Requires(0 <= index && index < Count);
 
-            if (index <= 0)
+            var current = index;
+            while (current > 0 && Less(current, ParentIndex(current)))
             {
-                return;
+                Swap(current, ParentIndex(current));
+                current = ParentIndex(current);
             }
-            var parentIndex = (index - 1)/2;
-            if (Less(index, parentIndex))
-            {
-                Swap(index, parentIndex);
-                BubbleUp(parentIndex);
-            }
+        }
+
+        private int ParentIndex(int index)
+        {
+            Contract.Requires(0 <= index && index < Count);
+
+            return (index - 1)/2;
         }
 
         private void BubbleDown(int index)
