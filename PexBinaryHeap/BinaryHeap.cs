@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace PexBinaryHeap
 {
-    public class BinaryHeap<TPriority, TValue>
+    public sealed class BinaryHeap<TPriority, TValue>
     {
         private readonly List<KeyValuePair<TPriority, TValue>> items = 
             new List<KeyValuePair<TPriority, TValue>>();
@@ -83,111 +83,116 @@ namespace PexBinaryHeap
         [Pure]
         private bool HeapPropertyIsSatisfied()
         {
-            for (int i = 0; i < Count; i++)
+            for (int element = 0; element < Count; element++)
             {
-                var leftIndex = LeftChildIndex(i);
-                if (leftIndex < Count)
+                var leftChild = LeftChild(element);
+                if (Exists(leftChild))
                 {
-                    Contract.Assert(Less(i, leftIndex));
+                    Contract.Assert(IsLess(element, leftChild));
                 }
 
-                var rightIndex = RightChildIndex(i);
-                if (rightIndex < Count)
+                var rightChild = RightChild(element);
+                if (Exists(rightChild))
                 {
-                    Contract.Assert(Less(i, rightIndex));
+                    Contract.Assert(IsLess(element, rightChild));
                 }
             }
             return true;
         }
 
-        private void BubbleUp(int index)
+        private bool Exists(int element)
         {
-            Contract.Requires(0 <= index && index < Count);
+            return element < Count;
+        }
 
-            var current = index;
-            while (current > 0 && Less(current, ParentIndex(current)))
+        private void BubbleUp(int element)
+        {
+            Contract.Requires(0 <= element && element < Count);
+
+            var current = element;
+            while (current > 0 && IsLess(current, Parent(current)))
             {
-                Swap(current, ParentIndex(current));
-                current = ParentIndex(current);
+                Swap(current, Parent(current));
+                current = Parent(current);
             }
         }
 
-        private int ParentIndex(int index)
+        private int Parent(int element)
         {
-            Contract.Requires(0 <= index && index < Count);
+            Contract.Requires(0 <= element && element < Count);
 
-            return (index - 1)/2;
+            return (element - 1)/2;
         }
 
-        private void BubbleDown(int index)
+        private void BubbleDown(int element)
         {
-            Contract.Requires(0 <= index && index < Count);
+            Contract.Requires(0 <= element && element < Count);
 
-            var lesserChildIndex = GetIndexOfMinValue(
-                index, 
-                LeftChildIndex(index), 
-                RightChildIndex(index));
-            if (lesserChildIndex != index)
+            var lesserChild = GetMinElement(
+                element, 
+                LeftChild(element), 
+                RightChild(element));
+            if (lesserChild != element)
             {
-                Swap(index, lesserChildIndex);
-                BubbleDown(lesserChildIndex);
+                Swap(element, lesserChild);
+                BubbleDown(lesserChild);
             }
         }
 
-        private int RightChildIndex(int index)
+        private int RightChild(int element)
         {
-            Contract.Requires(0 <= index && index < Count);
+            Contract.Requires(0 <= element && element < Count);
 
-            return index * 2 + 2;
+            return element * 2 + 2;
         }
 
-        private int LeftChildIndex(int index)
+        private int LeftChild(int element)
         {
-            Contract.Requires(0 <= index && index < Count);
+            Contract.Requires(0 <= element && element < Count);
 
-            return index * 2 + 1;
+            return element * 2 + 1;
         }
 
-        private int GetIndexOfMinValue(int index, int leftChildIndex, int rightChildIndex)
+        private int GetMinElement(int element, int leftChild, int rightChild)
         {
-            Contract.Requires(0 <= index && index < Count);
-            Contract.Requires(0 <= leftChildIndex);
-            Contract.Requires(0 <= rightChildIndex);
+            Contract.Requires(0 <= element && element < Count);
+            Contract.Requires(0 <= leftChild);
+            Contract.Requires(0 <= rightChild);
 
-            int minIndex;
-            if (leftChildIndex < Count && Less(leftChildIndex, index))
+            int result;
+            if (leftChild < Count && IsLess(leftChild, element))
             {
-                minIndex = leftChildIndex;
+                result = leftChild;
             }
             else
             {
-                minIndex = index;
+                result = element;
             }
-            if (rightChildIndex < Count && Less(rightChildIndex, minIndex))
+            if (rightChild < Count && IsLess(rightChild, result))
             {
-                minIndex = rightChildIndex;
+                result = rightChild;
             }
-            return minIndex;
+            return result;
         }
 
-        private void Swap(int leftIndex, int rightIndex)
+        private void Swap(int left, int right)
         {
-            Contract.Requires(0 <= leftIndex && leftIndex <= Count);
-            Contract.Requires(0 <= rightIndex && rightIndex <= Count);
+            Contract.Requires(0 <= left && left <= Count);
+            Contract.Requires(0 <= right && right <= Count);
             
-            var temp = items[leftIndex];
-            items[leftIndex] = items[rightIndex];
-            items[rightIndex] = temp;
+            var temp = items[left];
+            items[left] = items[right];
+            items[right] = temp;
         }
 
-        private bool Less(int leftIndex, int rightIndex)
+        private bool IsLess(int left, int right)
         {
-            Contract.Requires(0 <= leftIndex && leftIndex <= Count);
-            Contract.Requires(0 <= rightIndex && rightIndex <= Count);
+            Contract.Requires(0 <= left && left <= Count);
+            Contract.Requires(0 <= right && right <= Count);
 
             return compare(
-                items[leftIndex].Key,
-                items[rightIndex].Key) <= 0;
+                items[left].Key,
+                items[right].Key) <= 0;
         }
     }
 }
