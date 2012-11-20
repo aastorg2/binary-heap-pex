@@ -92,15 +92,14 @@ namespace PexBinaryHeap.Tests.Pex
 
         [PexMethod]
         public void GetFirst_WhenCalled_CountStaysTheSame<TPriority, TValue>(
-            KeyValuePair<TPriority, TValue>[] values)
+            [PexAssumeUnderTest] BinaryHeap<TPriority, TValue> heap)
         {
-            PexAssume.IsNotNullOrEmpty(values);
-            var heap = new BinaryHeap<TPriority, TValue>(values);
-            var count = heap.Count;
+            PexAssume.IsTrue(heap.Count > 0);
+            var initialCount = heap.Count;
 
             heap.GetFirst();
 
-            Assert.AreEqual(count, heap.Count);
+            Assert.AreEqual(initialCount, heap.Count);
         }
 
         [PexMethod]

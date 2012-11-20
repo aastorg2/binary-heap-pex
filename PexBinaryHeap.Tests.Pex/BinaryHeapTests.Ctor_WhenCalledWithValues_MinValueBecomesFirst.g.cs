@@ -26,6 +26,41 @@ public void Ctor_WhenCalledWithValues_MinValueBecomesFirst731()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Ctor_WhenCalledWithValues_MinValueBecomesFirst167()
+{
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[2];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1023, 1023);
+    keyValuePairs[0] = s0;
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(1023, 1023);
+    keyValuePairs[1] = s1;
+    this.Ctor_WhenCalledWithValues_MinValueBecomesFirst(keyValuePairs);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Ctor_WhenCalledWithValues_MinValueBecomesFirst944()
+{
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[3];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1023, 1023);
+    keyValuePairs[0] = s0;
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(1023, 1023);
+    keyValuePairs[1] = s1;
+    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(1023, 1023);
+    keyValuePairs[2] = s2;
+    this.Ctor_WhenCalledWithValues_MinValueBecomesFirst(keyValuePairs);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Ctor_WhenCalledWithValues_MinValueBecomesFirst884()
+{
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[4];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1023, 1023);
+    keyValuePairs[0] = s0;
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(1023, 1023);
+    keyValuePairs[1] = s1;
+    this.Ctor_WhenCalledWithValues_MinValueBecomesFirst(keyValuePairs);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
 public void Ctor_WhenCalledWithValues_MinValueBecomesFirst885()
 {
     KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[5];
@@ -47,23 +82,27 @@ public void Ctor_WhenCalledWithValues_MinValueBecomesFirst973()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void Ctor_WhenCalledWithValues_MinValueBecomesFirst714()
+public void Ctor_WhenCalledWithValues_MinValueBecomesFirst831()
 {
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[11];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, 1);
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[10];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(516, 516);
     keyValuePairs[1] = s0;
-    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(1, 1);
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(770, 770);
     keyValuePairs[2] = s1;
-    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(1, 1);
+    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(512, 512);
     keyValuePairs[3] = s2;
     KeyValuePair<int, int> s3 = new KeyValuePair<int, int>(1, 1);
     keyValuePairs[4] = s3;
-    KeyValuePair<int, int> s4 = new KeyValuePair<int, int>(1, 1);
+    KeyValuePair<int, int> s4 = new KeyValuePair<int, int>(512, 512);
     keyValuePairs[5] = s4;
     KeyValuePair<int, int> s5 = new KeyValuePair<int, int>(1, 1);
     keyValuePairs[6] = s5;
-    KeyValuePair<int, int> s6 = new KeyValuePair<int, int>(1, 1);
+    KeyValuePair<int, int> s6 = new KeyValuePair<int, int>(2, 2);
     keyValuePairs[7] = s6;
+    KeyValuePair<int, int> s7 = new KeyValuePair<int, int>(3, 3);
+    keyValuePairs[8] = s7;
+    KeyValuePair<int, int> s8 = new KeyValuePair<int, int>(769, 769);
+    keyValuePairs[9] = s8;
     this.Ctor_WhenCalledWithValues_MinValueBecomesFirst(keyValuePairs);
 }
     }

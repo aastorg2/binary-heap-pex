@@ -12,6 +12,9 @@ using System;
 using NUnit.Framework;
 using Microsoft.Pex.Framework.Generated;
 using System.Collections.Generic;
+using PexBinaryHeap;
+using PexBinaryHeap.Tests.Pex.Factories;
+using Microsoft.Pex.Framework;
 
 namespace PexBinaryHeap.Tests.Pex
 {
@@ -19,44 +22,55 @@ namespace PexBinaryHeap.Tests.Pex
     {
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenCalled_CountStaysTheSame731()
+public void GetFirst_WhenCalled_CountStaysTheSame952()
 {
+    BinaryHeap<int, int> binaryHeap;
     KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[1];
-    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(keyValuePairs);
+    binaryHeap = BinaryHeapFactory.Create(keyValuePairs);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(binaryHeap);
+    PexAssert.IsNotNull((object)binaryHeap);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenCalled_CountStaysTheSame709()
+public void GetFirst_WhenCalled_CountStaysTheSame581()
 {
+    BinaryHeap<int, int> binaryHeap;
     KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[2];
-    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(keyValuePairs);
+    binaryHeap = BinaryHeapFactory.Create(keyValuePairs);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(binaryHeap);
+    PexAssert.IsNotNull((object)binaryHeap);
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenCalled_CountStaysTheSame419()
+[Ignore("the test state was: path bounds exceeded")]
+public void GetFirst_WhenCalled_CountStaysTheSame03()
 {
+    BinaryHeap<int, int> binaryHeap;
+    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[41];
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(4, default(int));
+    keyValuePairs[0] = s0;
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(4, default(int));
+    keyValuePairs[1] = s1;
+    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(12, default(int));
+    keyValuePairs[2] = s2;
+    binaryHeap = BinaryHeapFactory.Create(keyValuePairs);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(binaryHeap);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void GetFirst_WhenCalled_CountStaysTheSame690()
+{
+    BinaryHeap<int, int> binaryHeap;
     KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[3];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[1] = s0;
-    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(keyValuePairs);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenCalled_CountStaysTheSame672()
-{
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[4];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[1] = s0;
-    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(keyValuePairs);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetFirst_WhenCalled_CountStaysTheSame756()
-{
-    KeyValuePair<int, int>[] keyValuePairs = new KeyValuePair<int, int>[5];
-    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(1, default(int));
-    keyValuePairs[1] = s0;
-    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(keyValuePairs);
+    KeyValuePair<int, int> s0 = new KeyValuePair<int, int>(552, default(int));
+    keyValuePairs[0] = s0;
+    KeyValuePair<int, int> s1 = new KeyValuePair<int, int>(74, default(int));
+    keyValuePairs[1] = s1;
+    KeyValuePair<int, int> s2 = new KeyValuePair<int, int>(74, default(int));
+    keyValuePairs[2] = s2;
+    binaryHeap = BinaryHeapFactory.Create(keyValuePairs);
+    this.GetFirst_WhenCalled_CountStaysTheSame<int, int>(binaryHeap);
+    PexAssert.IsNotNull((object)binaryHeap);
 }
     }
 }
