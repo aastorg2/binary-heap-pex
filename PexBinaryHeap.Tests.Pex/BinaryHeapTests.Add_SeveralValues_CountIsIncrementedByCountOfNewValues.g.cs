@@ -131,11 +131,11 @@ public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues572()
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
 [Ignore("the test state was: path bounds exceeded")]
-public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues284()
+public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues452()
 {
     BinaryHeap<int, int> binaryHeap;
     binaryHeap = BinaryHeapFactory.Create();
-    Tuple<int, int>[] tuples = new Tuple<int, int>[18];
+    Tuple<int, int>[] tuples = new Tuple<int, int>[23];
     Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
     tuples[0] = s0;
     Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
@@ -172,6 +172,16 @@ public void Add_SeveralValues_CountIsIncrementedByCountOfNewValues284()
     tuples[16] = s16;
     Tuple<int, int> s17 = new Tuple<int, int>(0, 0);
     tuples[17] = s17;
+    Tuple<int, int> s18 = new Tuple<int, int>(0, 0);
+    tuples[18] = s18;
+    Tuple<int, int> s19 = new Tuple<int, int>(0, 0);
+    tuples[19] = s19;
+    Tuple<int, int> s20 = new Tuple<int, int>(0, 0);
+    tuples[20] = s20;
+    Tuple<int, int> s21 = new Tuple<int, int>(0, 0);
+    tuples[21] = s21;
+    Tuple<int, int> s22 = new Tuple<int, int>(0, 0);
+    tuples[22] = s22;
     this.Add_SeveralValues_CountIsIncrementedByCountOfNewValues<int, int>
         (binaryHeap, tuples);
 }

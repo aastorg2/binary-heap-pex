@@ -45,6 +45,7 @@ namespace PexBinaryHeap
                 throw new InvalidOperationException("Cannot get an element from empty heap.");
             }
 
+            Contract.Assert(items.Count > 0);
             return items[0].Value;
         }
 
@@ -54,6 +55,8 @@ namespace PexBinaryHeap
             {
                 throw new InvalidOperationException("Cannot extract an element from empty heap.");
             }
+
+            Contract.Assert(items.Count > 0);
 
             var result = items[0].Value;
             items[0] = items[items.Count - 1];

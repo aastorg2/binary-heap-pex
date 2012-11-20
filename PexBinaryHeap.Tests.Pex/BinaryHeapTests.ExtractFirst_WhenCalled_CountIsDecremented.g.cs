@@ -145,27 +145,6 @@ public void ExtractFirst_WhenCalled_CountIsDecremented747()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void ExtractFirst_WhenCalled_CountIsDecremented77()
-{
-    Tuple<int, int>[] tuples = new Tuple<int, int>[7];
-    Tuple<int, int> s0 = new Tuple<int, int>(775, 0);
-    tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(771, 0);
-    tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(707, 0);
-    tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(706, 0);
-    tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(677, 0);
-    tuples[4] = s4;
-    Tuple<int, int> s5 = new Tuple<int, int>(612, 0);
-    tuples[5] = s5;
-    Tuple<int, int> s6 = new Tuple<int, int>(419, 0);
-    tuples[6] = s6;
-    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
-}
-[Test]
-[PexGeneratedBy(typeof(BinaryHeapTests))]
 public void ExtractFirst_WhenCalled_CountIsDecremented577()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[8];
@@ -189,44 +168,54 @@ public void ExtractFirst_WhenCalled_CountIsDecremented577()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-[Ignore("the test state was: path bounds exceeded")]
-public void ExtractFirst_WhenCalled_CountIsDecremented817()
+public void ExtractFirst_WhenCalled_CountIsDecremented609()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[17];
-    Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
+    Tuple<int, int>[] tuples = new Tuple<int, int>[6];
+    Tuple<int, int> s0 = new Tuple<int, int>(560, 0);
     tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s1 = new Tuple<int, int>(192, 0);
     tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s2 = new Tuple<int, int>(65, 0);
     tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s3 = new Tuple<int, int>(8, 0);
     tuples[3] = s3;
-    Tuple<int, int> s4 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s4 = new Tuple<int, int>(1, 0);
     tuples[4] = s4;
-    Tuple<int, int> s5 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s5 = new Tuple<int, int>(577, 0);
     tuples[5] = s5;
-    Tuple<int, int> s6 = new Tuple<int, int>(0, 0);
+    this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
+}
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void ExtractFirst_WhenCalled_CountIsDecremented389()
+{
+    Tuple<int, int>[] tuples = new Tuple<int, int>[13];
+    Tuple<int, int> s0 = new Tuple<int, int>(10485761, 0);
+    tuples[0] = s0;
+    Tuple<int, int> s1 = new Tuple<int, int>(11608072, 0);
+    tuples[1] = s1;
+    Tuple<int, int> s2 = new Tuple<int, int>(8388608, 0);
+    tuples[2] = s2;
+    Tuple<int, int> s3 = new Tuple<int, int>(2105344, 0);
+    tuples[3] = s3;
+    Tuple<int, int> s4 = new Tuple<int, int>(458752, 0);
+    tuples[4] = s4;
+    Tuple<int, int> s5 = new Tuple<int, int>(-1610612735, 0);
+    tuples[5] = s5;
+    Tuple<int, int> s6 = new Tuple<int, int>(-2145386167, 0);
     tuples[6] = s6;
-    Tuple<int, int> s7 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s7 = new Tuple<int, int>(-2146369536, 0);
     tuples[7] = s7;
-    Tuple<int, int> s8 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s8 = new Tuple<int, int>(-2146435072, 0);
     tuples[8] = s8;
-    Tuple<int, int> s9 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s9 = new Tuple<int, int>(-2147479552, 0);
     tuples[9] = s9;
-    Tuple<int, int> s10 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s10 = new Tuple<int, int>(-2147479552, 0);
     tuples[10] = s10;
-    Tuple<int, int> s11 = new Tuple<int, int>(0, 0);
+    Tuple<int, int> s11 = new Tuple<int, int>(-1879048192, 0);
     tuples[11] = s11;
     Tuple<int, int> s12 = new Tuple<int, int>(0, 0);
     tuples[12] = s12;
-    Tuple<int, int> s13 = new Tuple<int, int>(0, 0);
-    tuples[13] = s13;
-    Tuple<int, int> s14 = new Tuple<int, int>(0, 0);
-    tuples[14] = s14;
-    Tuple<int, int> s15 = new Tuple<int, int>(0, 0);
-    tuples[15] = s15;
-    Tuple<int, int> s16 = new Tuple<int, int>(0, 0);
-    tuples[16] = s16;
     this.ExtractFirst_WhenCalled_CountIsDecremented<int, int>(tuples);
 }
     }
