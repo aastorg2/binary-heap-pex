@@ -79,16 +79,16 @@ public void GetValue_WhenCalled_CountStaysTheSame282()
 }
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
-public void GetValue_WhenCalled_CountStaysTheSame925()
+public void GetValue_WhenCalled_CountStaysTheSame622()
 {
     Tuple<int, int>[] tuples = new Tuple<int, int>[5];
-    Tuple<int, int> s0 = new Tuple<int, int>(169, 0);
+    Tuple<int, int> s0 = new Tuple<int, int>(791, 0);
     tuples[0] = s0;
-    Tuple<int, int> s1 = new Tuple<int, int>(177, 0);
+    Tuple<int, int> s1 = new Tuple<int, int>(896, 0);
     tuples[1] = s1;
-    Tuple<int, int> s2 = new Tuple<int, int>(168, 0);
+    Tuple<int, int> s2 = new Tuple<int, int>(598, 0);
     tuples[2] = s2;
-    Tuple<int, int> s3 = new Tuple<int, int>(178, 0);
+    Tuple<int, int> s3 = new Tuple<int, int>(896, 0);
     tuples[3] = s3;
     Tuple<int, int> s4 = new Tuple<int, int>(0, 0);
     tuples[4] = s4;
@@ -97,9 +97,9 @@ public void GetValue_WhenCalled_CountStaysTheSame925()
 [Test]
 [PexGeneratedBy(typeof(BinaryHeapTests))]
 [Ignore("the test state was: path bounds exceeded")]
-public void GetValue_WhenCalled_CountStaysTheSame956()
+public void GetValue_WhenCalled_CountStaysTheSame2()
 {
-    Tuple<int, int>[] tuples = new Tuple<int, int>[21];
+    Tuple<int, int>[] tuples = new Tuple<int, int>[22];
     Tuple<int, int> s0 = new Tuple<int, int>(0, 0);
     tuples[0] = s0;
     Tuple<int, int> s1 = new Tuple<int, int>(0, 0);
@@ -142,6 +142,8 @@ public void GetValue_WhenCalled_CountStaysTheSame956()
     tuples[19] = s19;
     Tuple<int, int> s20 = new Tuple<int, int>(0, 0);
     tuples[20] = s20;
+    Tuple<int, int> s21 = new Tuple<int, int>(0, 0);
+    tuples[21] = s21;
     this.GetValue_WhenCalled_CountStaysTheSame<int, int>(tuples);
 }
     }

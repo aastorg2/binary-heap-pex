@@ -145,5 +145,23 @@ public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue670()
     ints[10] = 768;
     this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
 }
+[Test]
+[PexGeneratedBy(typeof(BinaryHeapTests))]
+public void Extract_WhenHeapContainsSeveralElements_ResultIsMinValue41()
+{
+    int[] ints = new int[11];
+    ints[0] = 1017;
+    ints[1] = 1017;
+    ints[2] = 521;
+    ints[3] = 10;
+    ints[4] = 11;
+    ints[5] = 65;
+    ints[6] = 96;
+    ints[7] = 508;
+    ints[8] = 253;
+    ints[9] = 776;
+    ints[10] = 544;
+    this.Extract_WhenHeapContainsSeveralElements_ResultIsMinValue(ints);
+}
     }
 }

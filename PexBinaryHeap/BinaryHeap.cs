@@ -56,9 +56,9 @@ namespace PexBinaryHeap
             }
 
             var result = items[0].Value;
-            Swap(0, Count - 1);
-            items.RemoveAt(Count - 1);
-            if (Count > 0)
+            items[0] = items[items.Count - 1];
+            items.RemoveAt(items.Count - 1);
+            if (items.Count > 0)
             {
                 BubbleDown(0);
             }
@@ -85,16 +85,16 @@ namespace PexBinaryHeap
         {
             for (int i = 0; i < Count; i++)
             {
-                var leftIndex = 2 * i + 1;
-                if (leftIndex < Count && !Less(i, leftIndex))
+                var leftIndex = LeftChildIndex(i);
+                if (leftIndex < Count)
                 {
-                    return false;
+                    Contract.Assert(Less(i, leftIndex));
                 }
 
-                var rightIndex = 2 * i + 2;
-                if (rightIndex < Count && !Less(i, rightIndex))
+                var rightIndex = RightChildIndex(i);
+                if (rightIndex < Count)
                 {
-                    return false;
+                    Contract.Assert(Less(i, rightIndex));
                 }
             }
             return true;
@@ -120,43 +120,51 @@ namespace PexBinaryHeap
         {
             Contract.Requires(0 <= index && index < Count);
 
-            if (index == Count - 1)
+            var lesserChildIndex = GetIndexOfMinValue(
+                index, 
+                LeftChildIndex(index), 
+                RightChildIndex(index));
+            if (lesserChildIndex != index)
             {
-                return;
+                Swap(index, lesserChildIndex);
+                BubbleDown(lesserChildIndex);
             }
+        }
 
-            var leftChildIndex = index * 2 + 1;
-            var rightChildIndex = index * 2 + 2;
-            
-            if (leftChildIndex < Count && 
-                rightChildIndex < Count)  // both children are present
+        private int RightChildIndex(int index)
+        {
+            Contract.Requires(0 <= index && index < Count);
+
+            return index * 2 + 2;
+        }
+
+        private int LeftChildIndex(int index)
+        {
+            Contract.Requires(0 <= index && index < Count);
+
+            return index * 2 + 1;
+        }
+
+        private int GetIndexOfMinValue(int index, int leftChildIndex, int rightChildIndex)
+        {
+            Contract.Requires(0 <= index && index < Count);
+            Contract.Requires(0 <= leftChildIndex);
+            Contract.Requires(0 <= rightChildIndex);
+
+            int minIndex;
+            if (leftChildIndex < Count && Less(leftChildIndex, index))
             {
-                // pick lesser child and swap it with parent
-                if (Less(leftChildIndex, rightChildIndex))
-                {
-                    if (Less(leftChildIndex, index))
-                    {
-                        Swap(leftChildIndex, index);
-                        BubbleDown(leftChildIndex);
-                    }
-                }
-                else
-                {
-                    if (Less(rightChildIndex, index))
-                    {
-                        Swap(rightChildIndex, index);
-                        BubbleDown(rightChildIndex);
-                    }
-                }
+                minIndex = leftChildIndex;
             }
-            else if (leftChildIndex < Count)    // only left child is present
+            else
             {
-                if (Less(leftChildIndex, index))
-                {
-                    Swap(leftChildIndex, index);
-                    BubbleDown(leftChildIndex);
-                }
+                minIndex = index;
             }
+            if (rightChildIndex < Count && Less(rightChildIndex, minIndex))
+            {
+                minIndex = rightChildIndex;
+            }
+            return minIndex;
         }
 
         private void Swap(int leftIndex, int rightIndex)
