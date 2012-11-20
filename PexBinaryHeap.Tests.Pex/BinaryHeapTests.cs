@@ -46,6 +46,7 @@ namespace PexBinaryHeap.Tests.Pex
             [PexAssumeUnderTest] BinaryHeap<TPriority, TValue> heap,
             [PexAssumeNotNull] KeyValuePair<TPriority, TValue>[] valuesToAdd)
         {
+            PexObserve.ValueForViewing("heap initial", heap.ToString());
             var initialCount = heap.Count;
 
             foreach (var priorityAndValue in valuesToAdd)
@@ -55,7 +56,7 @@ namespace PexBinaryHeap.Tests.Pex
                 Assert.That(heap.Count, Is.EqualTo(previousCount + 1));
             }
 
-            PexObserve.ValueForViewing("heap values", heap.ToString());
+            PexObserve.ValueForViewing("heap result", heap.ToString());
             Assert.That(heap.Count, Is.EqualTo(initialCount + valuesToAdd.Length));
         }
 
