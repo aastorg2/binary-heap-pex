@@ -6,7 +6,6 @@ using Microsoft.Pex.Framework;
 using Microsoft.Pex.Framework.Validation;
 using NUnit.Framework;
 using System.Linq;
-using FluentAssertions;
 
 namespace PexBinaryHeap.Tests.Pex
 {
@@ -109,9 +108,9 @@ namespace PexBinaryHeap.Tests.Pex
         {
             var heap = new BinaryHeap<int, int>();
 
-            Action extractAction = () => heap.ExtractFirst();
+            TestDelegate extractAction = () => heap.ExtractFirst();
 
-            extractAction.ShouldThrow<InvalidOperationException>();
+            Assert.That(extractAction, Throws.InvalidOperationException);
         }
 
         [Test]
@@ -119,9 +118,9 @@ namespace PexBinaryHeap.Tests.Pex
         {
             var heap = new BinaryHeap<int, int>();
 
-            Action getValueAction = () => heap.GetFirst();
+            TestDelegate getValueAction = () => heap.GetFirst();
 
-            getValueAction.ShouldThrow<InvalidOperationException>();
+            Assert.That(getValueAction, Throws.InvalidOperationException);
         }
     }
 }
